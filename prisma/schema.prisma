@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model worcking {
+  id Int @default(autoincrement()) @id
+  date DateTime?
+  timeIn DateTime? @map("time_in")
+  timeOut DateTime? @map("time_out")
+  dirnneIn DateTime? @map("dirnne_in")
+  dirnneOut DateTime? @map("dirnne_out")
+}
