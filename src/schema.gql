@@ -4,29 +4,40 @@
 
 type Wor {
   id: Int!
-  date: String!
-  timeIn: String!
-  timeOut: String!
-  dirnneIn: String!
-  dirnneOut: String!
+  date: DateTime!
+  timeIn: DateTime!
+  timeOut: DateTime!
+  dirnneIn: DateTime!
+  dirnneOut: DateTime!
 }
 
-type Query {
-  wor(id: Int!): Wor!
-}
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
 
-type Mutation {
-  createWor(createWorInput: CreateWorInput!): Wor!
-  updateWor(updateWorInput: UpdateWorInput!): Wor!
-  removeWor(id: Int!): Wor!
-}
-
-input CreateWorInput {
+type Test {
   """Example field (placeholder)"""
   exampleField: Int!
 }
 
-input UpdateWorInput {
+type Query {
+  getAll: Wor!
+  test(id: Int!): Test!
+}
+
+type Mutation {
+  createTest(createTestInput: CreateTestInput!): Test!
+  updateTest(updateTestInput: UpdateTestInput!): Test!
+  removeTest(id: Int!): Test!
+}
+
+input CreateTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTestInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!

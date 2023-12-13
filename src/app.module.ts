@@ -4,6 +4,7 @@ import { GraphQLModule } from "@nestjs/graphql";
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { PrismaService } from "./PrismaService";
 import { WorModule } from './wor/wor.module';
+import { TestModule } from './test/test.module';
 
 @Module({
 
@@ -11,7 +12,7 @@ import { WorModule } from './wor/wor.module';
     driver: ApolloDriver,
     playground: true,
     autoSchemaFile: './src/schema.gql'
-  }), WorModule],
+  }), WorModule, TestModule],
   controllers: [],
   providers: [PrismaService],
 })

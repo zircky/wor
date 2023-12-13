@@ -2,6 +2,16 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 
 @InputType()
 export class CreateWorInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @Field(type => Int)
+  id: number
+  @Field()
+  date?: string
+  @Field()
+  timeIn?: string
+  @Field()
+  timeOut?: string
+  @Field()
+  dirnneIn?: string
+  @Field()
+  dirnneOut?: string
 }
