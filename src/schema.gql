@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Wor {
+  id: Int!
+  date: String!
+  timeIn: String!
+  timeOut: String!
+  dirnneIn: String!
+  dirnneOut: String!
+}
+
+type Query {
+  wor(id: Int!): Wor!
+}
+
+type Mutation {
+  createWor(createWorInput: CreateWorInput!): Wor!
+  updateWor(updateWorInput: UpdateWorInput!): Wor!
+  removeWor(id: Int!): Wor!
+}
+
+input CreateWorInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateWorInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
