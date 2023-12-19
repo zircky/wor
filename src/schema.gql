@@ -4,41 +4,20 @@
 
 type Wor {
   id: Int!
-  date: DateTime!
-  timeIn: DateTime!
-  timeOut: DateTime!
-  dirnneIn: DateTime!
-  dirnneOut: DateTime!
+  date: String
+  timeIn: String
+  timeOut: String
+  dirnneIn: String
+  dirnneOut: String
 }
 
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
 type Test {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: Int!
+  name: String!
+  age: Int!
 }
 
 type Query {
-  getAll: Wor!
-  test(id: Int!): Test!
-}
-
-type Mutation {
-  createTest(createTestInput: CreateTestInput!): Test!
-  updateTest(updateTestInput: UpdateTestInput!): Test!
-  removeTest(id: Int!): Test!
-}
-
-input CreateTestInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input UpdateTestInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  wors: Wor!
+  tests: Test!
 }

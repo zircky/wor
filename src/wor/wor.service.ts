@@ -9,7 +9,7 @@ export class WorService {
   constructor(private readonly prisma: PrismaService) {
   }
 
-  async getAll() {
-    return this.prisma.worcking.findMany()
+  async findAll() {
+    return this.prisma.worcking.findMany();
   }
 }

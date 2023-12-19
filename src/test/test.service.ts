@@ -1,26 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTestInput } from './dto/create-test.input';
 import { UpdateTestInput } from './dto/update-test.input';
+import { PrismaService } from "../PrismaService";
+import { Test } from "@prisma/client";
 
 @Injectable()
 export class TestService {
-  create(createTestInput: CreateTestInput) {
-    return 'This action adds a new test';
+  constructor(private readonly prisma: PrismaService) {
   }
 
-  findAll() {
-    return `This action returns all test`;
-  }
 
-  findOne(id: number) {
-    return `This action returns a #${id} test`;
-  }
-
-  update(id: number, updateTestInput: UpdateTestInput) {
-    return `This action updates a #${id} test`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} test`;
+  async findAll(): Promise<Test[]> {
+    return this.prisma.test.findMany({});
   }
 }

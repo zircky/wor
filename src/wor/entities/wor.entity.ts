@@ -4,14 +4,14 @@ import { ObjectType, Field, Int, GraphQLISODateTime } from "@nestjs/graphql";
 export class Wor {
   @Field(type => Int)
   id: number
-  @Field(type => GraphQLISODateTime)
-  date: string
-  @Field(type => GraphQLISODateTime)
-  timeIn: string
-  @Field(type => GraphQLISODateTime)
-  timeOut: string
-  @Field(type => GraphQLISODateTime)
-  dirnneIn: string
-  @Field(type => GraphQLISODateTime)
-  dirnneOut: string
+  @Field({ nullable: true })
+  date?: string
+  @Field({ nullable: true })
+  timeIn?: string
+  @Field({ nullable: true })
+  timeOut?: string
+  @Field({ nullable: true })
+  dirnneIn?: string
+  @Field({ nullable: true })
+  dirnneOut?: string
 }

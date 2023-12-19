@@ -10,11 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model worcking {
+model Worcking {
   id Int @default(autoincrement()) @id
   date DateTime?
   timeIn DateTime? @map("time_in")
   timeOut DateTime? @map("time_out")
   dirnneIn DateTime? @map("dirnne_in")
   dirnneOut DateTime? @map("dirnne_out")
+}
+
+model Test {
+  id Int @default(autoincrement()) @id
+  name String
+  age Int
 }
