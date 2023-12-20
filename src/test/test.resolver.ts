@@ -30,7 +30,7 @@ export class TestResolver {
   //   return this.testService.remove(id);
   // }
 
-  @Query(() => Test, {name: 'tests'})
+  @Query(() => [Test], { name: "tests" })
   async getTestAll() {
     return this.testService.findAll();
   }

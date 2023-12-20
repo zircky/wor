@@ -18,6 +18,19 @@ type Test {
 }
 
 type Query {
-  wors: Wor!
-  tests: Test!
+  wors: [Wor!]!
+  tests: [Test!]!
+}
+
+type Mutation {
+  createWor(data: CreateWorInput!): Wor!
+}
+
+input CreateWorInput {
+  id: Int!
+  date: String
+  timeIn: String
+  timeOut: String
+  dirnneIn: String
+  dirnneOut: String
 }

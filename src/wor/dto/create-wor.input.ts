@@ -1,17 +1,22 @@
-import { InputType, Int, Field } from '@nestjs/graphql';
+import { InputType, Int, Field, GraphQLISODateTime } from "@nestjs/graphql";
 
 @InputType()
 export class CreateWorInput {
   @Field(type => Int)
   id: number
-  @Field()
+  //@Field(type => GraphQLISODateTime, { nullable: true })
+  @Field({ nullable: true })
   date?: string
-  @Field()
+  // @Field(type => GraphQLISODateTime,{ nullable: true })
+  @Field({ nullable: true })
   timeIn?: string
-  @Field()
+  // @Field(type => GraphQLISODateTime, { nullable: true })
+  @Field({ nullable: true })
   timeOut?: string
-  @Field()
+  // @Field(type => GraphQLISODateTime,{ nullable: true })
+  @Field({ nullable: true })
   dirnneIn?: string
-  @Field()
+  // @Field(type => GraphQLISODateTime,{ nullable: true })
+  @Field({ nullable: true })
   dirnneOut?: string
 }
